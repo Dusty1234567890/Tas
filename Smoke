@@ -1,0 +1,27 @@
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+local smoke = Instance.new("Smoke")
+smoke.Color = Color3.new(0, 0, 0)
+smoke.Size = 20
+smoke.RiseVelocity = 5
+smoke.Parent = character.HumanoidRootPart
+
+local function createSmoke()
+    local smokeClone = smoke:Clone()
+    smokeClone.Parent = character.HumanoidRootPart
+    smokeClone.Enabled = true
+    wait(2) -- Adjust the duration of the smoke effect here
+    smokeClone.Enabled = false
+    wait(1) -- Adjust the cooldown time between smoke effects here
+    smokeClone:Destroy()
+end
+
+humanoid.Died:Connect(function()
+    smoke.Enabled = false
+end)
+
+while humanoid.Health > 0 do
+    createSmoke()
+end
