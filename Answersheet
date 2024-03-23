@@ -1,0 +1,71 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))()
+local Window = OrionLib:MakeWindow({Name = "Recall's answers sheet", IntroText = "Yet Darker", IntroIcon = "rbxassetid://16799121447", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+-- other
+local Tab6 = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://16799121447",
+	PremiumOnly = false
+})
+
+-- other
+local function printPlayerAge()
+    local playerAge = game.Players.LocalPlayer.AccountAge
+    return "Account Age: " .. tostring(playerAge)
+end
+
+Tab6:AddButton({
+    Name = "Account Age",
+    Callback = function()
+        Code = printPlayerAge()
+        OrionLib:MakeNotification({Name = Code, Content = "", Image = "rbxassetid://7733919105", Time = 5})
+    end
+})
+-- other
+-- Get the Players service
+local Players = game:GetService("Players")
+
+-- Create a function to update the player count
+local function updatePlayerCount()
+    -- Get the number of players currently in the game
+    local playerCount = #Players:GetPlayers()
+
+    -- Display the player count
+    Tab6:AddParagraph("How many players were present in this server when you were sent here?", "Answer: " .. playerCount)
+end
+
+-- Call the function initially to display the current player count
+updatePlayerCount()
+-- other parts
+Tab6:AddParagraph("What is the chance of getting bob from replica?","Answer: 1/7500")
+-- other
+Tab6:AddParagraph("What glove can’t you hit when it isn’t there?","Answer: Elude")
+-- other
+Tab6:AddParagraph("Did you forget that you repressed your memories?","Answer : yes")
+-- other
+Tab6:AddParagraph("What glove has exactly 9750 slap requirements to unlock?","Answer: Coil")
+-- other
+Tab6:AddParagraph("How many slaps do you have?", tostring(game.Players.LocalPlayer.leaderstats.Slaps.Value))
+-- other
+Tab6:AddParagraph("If 1=3, 2=3, 3=5, 4=4, 5=4, what does 6=?","Answer: 3")
+-- other
+Tab6:AddParagraph("When was Slap Battles first published to Roblox?","Answer: 16/2/2021")
+-- other
+Tab6:AddParagraph("Who ultimately controls this realm?","Answer: Tencell")
+-- other
+Tab6:AddParagraph("What is the badge name for the Glitch glove?","Answer: 01010010 01010101 01001110")
+-- other
+Tab6:AddParagraph("Do you know who I am?","Answer: A forgotten memory")
+-- other
+Tab6:AddParagraph("We’ll play Simon says at the end. Do you understand?","Answer : yes")
+-- other
+Tab6:AddParagraph("Simon says What was four fingers and a thumb but isn’t alive?","Answer: Enter Glove in the chat box.")
+-- other
+Tab6:AddParagraph("Simon says What has a bottom at the top?","Answer: Enter A leg in the chat")
+-- other
+Tab6:AddParagraph("Simon Says jump off the map to collect your reward","Answer : uh just jump off the map...")
+-- other
+Tab6:AddParagraph("Simon says dance on top of the LEFT OR RIGHT staircase crystal","Answer : go type e/dance on top of the crystal")
+-- other
+Tab6:AddParagraph("Simon says you must dance on top of the entity","Answer: stand on the crystal above the lookalike NPC then type e/dance")
+-- other
