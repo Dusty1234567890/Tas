@@ -69,3 +69,4 @@ Tab6:AddParagraph("Simon says dance on top of the LEFT OR RIGHT staircase crysta
 -- other
 Tab6:AddParagraph("Simon says you must dance on top of the entity","Answer: stand on the crystal above the lookalike NPC then type e/dance")
 -- other
+Tab6:AddParagraph("Glove stands amout","Answer: 164 I think ?")
